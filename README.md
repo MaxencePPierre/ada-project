@@ -3,7 +3,8 @@
 # Abstract
 A 150 word description of the project idea, goals, dataset used. What story you would like to tell and why? What's the motivation behind your project?
 
-The dataset we have choosen is the Amazon reviews which contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014. This year’s theme is “data science for social good”, we though about how we could improve society through data analysis
+The dataset we have choosen is the Amazon reviews which contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014. This year’s theme is “data science for social good”, we though about how we could improve society through data analysis.
+
 What we want to do : Study and try to tell a story about the evolution of people interest concerning climate change, renewables energies, pollution and bio food. Actually, aside Ada course, our group is following another course Data Visulation is which our project is to do some data visualiaztion about different climates changes scenario over the year 2050. The data is provided by standford and what would like to do is that we found interested to compare Amazon and Standford data over two differents project but focused on the same topic.
 
 
