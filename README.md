@@ -33,20 +33,18 @@ The total amount of data represents 142.8 million reviews spanning from May 1996
 
 Here is the link of Amazon dataset overview : http://jmcauley.ucsd.edu/data/amazon/
 
-As our theme is mostly climate change, we might focus on some categories such as :  Books, Kindle Store, TV-Movies, Health - Personal Care, Tools and Home Improvement, App for android, Amazon Instant Video. Indeed sport and outdoor or clothes might not be a big study part unless people interests can be linked.
+As our theme is mostly climate change, we might focus on some categories such as :  Books, Kindle Store, TV-Movies, Health - Personal Care, Tools and Home Improvement, App for android, Amazon Instant Video. Indeed some ohters such as sport and outdoor or clothes might not be a big study part unless people interests can be linked. it will then depend on the results.
 
 The data is split into K-core and Ratings only subsets and group by categories.
-
 K-cores (i.e., dense subsets): These data have been reduced to extract the k-core, such that each of the remaining users and items have k reviews each.
-
 Ratings only: These datasets include no metadata or reviews, but only (user,item,rating,timestamp) tuples. Thus they are suitable for use with mymedialite (or similar) packages.
 
 We will also use the metadata dataset which is complementary to the reviews and will give information about the product itself : Sale ranking, price etc...
 
 The data can by read with python, as a python dictionnary object, which is fine for us because we will use python. It also can be written in json file to use another langage. On the dataset overview, they provide a way to read the data into a pandas data frame.
-Regarding the size of the data and the subsete, the question we have to answer is if we need the use of apache spark or not ? As the data is split in subset, it will mainly depend on the size of subsets or on what we want to do and how.
+Regarding the size of the data and the subsete, the question we have to answer is if we need the use of apache spark or not ? As the data is split in subset, it will mainly depend on the size of subsets or on what we want to do and how. Also amazon splits the data into file which can be subset as wee saw above, soem file with or without duplicates reviews, with or without the ratings. We might focus on categories subsets which interest us.
 
- For our side, the dataset is stored on the EPFL cluster.
+For our side, the dataset is stored on the EPFL cluster.
 
 # A list of internal milestones up until project milestone 2
 
