@@ -32,6 +32,7 @@ List the dataset(s) you want to use, and some ideas on how do you expect to get,
 The total amount of data represents 142.8 million reviews spanning from May 1996 to July 2014. It is in total around 20Gb. This dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
 
 Here is the link of Amazon dataset overview : http://jmcauley.ucsd.edu/data/amazon/
+
 As our theme is mostly climate change, we might focus on some categories such as :  Books, Kindle Store, TV-Movies, Health - Personal Care, Tools and Home Improvement, App for android, Amazon Instant Video. Indeed sport and outdoor or clothes might not be a big study part unless people interests can be linked.
 
 The data is split into K-core and Ratings only subsets and group by categories.
