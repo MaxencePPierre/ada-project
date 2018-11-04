@@ -35,7 +35,9 @@ Here is the link of Amazon dataset overview : http://jmcauley.ucsd.edu/data/amaz
 As our theme is mostly climate change, we might focus on some categories such as :  Books, Kindle Store, TV-Movies, Health - Personal Care, Tools and Home Improvement, App for android, Amazon Instant Video. Indeed sport and outdoor or clothes might not be a big study part unless people interests can be linked.
 
 The data is split into K-core and Ratings only subsets and group by categories.
+
 K-cores (i.e., dense subsets): These data have been reduced to extract the k-core, such that each of the remaining users and items have k reviews each.
+
 Ratings only: These datasets include no metadata or reviews, but only (user,item,rating,timestamp) tuples. Thus they are suitable for use with mymedialite (or similar) packages.
 
 We will also use the metadata dataset which is complementary to the reviews and will give information about the product itself : Sale ranking, price etc...
