@@ -30,12 +30,14 @@ DATA_DIR = 'data/'
 
 ### IMPORTING & CLEANING META DATA
 
-meta_products = spark.read.json(DATA_DIR+"meta_Grocery_and_Gourmet_Food.json")
-
+meta_products = spark.read.json(DATA_DIR+"meta_Patio_Lawn_and_Garden.json")
 # This will extract only the features and turn them into more readable features.
 # Features removed : corruptRecord, imURL, related
-data_cleaned = meta_products.rdd.filter(lambda r: (r[7] != None ) )  \
-                    .flatMap(lambda r: [(r[0], r[1], r[2][0][0], r[3], r[5],r[7]['Grocery & Gourmet Food'],  r[8] )])
+# This will extract only the features and turn them into more readable features.
+# Filter salesRank = None because this will lead to problems for the writing in parquet
+# Features removed : corruptRecord, imURL, related
+data_cleaned = meta_products.rdd.filter(lambda r: (r[8] != None ) )  \
+                    .flatMap(lambda r: [(r[1], r[2], r[3][0][0], r[4], r[6],r[8]['Patio, Lawn & Garden'],  r[9] )]) \
 
 # Define the StructType to define the DataFrame that we'll create with the previously extracted rdd table
 schema = StructType([
@@ -52,10 +54,10 @@ schema = StructType([
 datacleaned_DF = spark.createDataFrame(data_cleaned, schema=schema)
 
 #Save into parquet to save time in the next times
-datacleaned_DF.write.mode('overwrite').parquet("meta_Grocery_and_Gourmet_Food.parquet")
+datacleaned_DF.write.mode('overwrite').parquet("meta_PatioLawnGarden.parquet")
 
 # Read from the parquet data
-#datacleaned_DF = spark.read.parquet("meta_Grocery_and_Gourmet_Food.parquet")
+#datacleaned_DF = spark.read.parquet("meta_HealthPersonalCare.parquet")
 
 
 keywords = [" global warming", " solar energy", " recycling ", " pollution ", "solar power", " endangered species", "air pollution", \
@@ -66,25 +68,25 @@ keywords = [" global warming", " solar energy", " recycling ", " pollution ", "s
 # Filter with title and description not equal to None
 # We will then be able to test if those features contains words defined in the keyword vector
 # The keyword vector represents the thema that we want : ecology, bio etc...
-grocery_food_filter_products_bio = datacleaned_DF.rdd.filter(lambda r: (r[6] != None) &  (r[3] != None)) \
+filter_products_bio = datacleaned_DF.rdd.filter(lambda r: (r[6] != None) &  (r[3] != None)) \
                     .filter(lambda r: (any(word in r[6].lower() for word in keywords)) | (any(word in r[3].lower() for word in keywords)) )
 
 # Transform the RDD data into DataFrame (we'll then be able work and join with review data)
-DF_filter_products_bio = spark.createDataFrame(grocery_food_filter_products_bio)
+DF_filter_products_bio = spark.createDataFrame(filter_products_bio)
 
 
 ### IMPORTING & CLEANING REVIEWS DATA
 
-reviews = spark.read.json(DATA_DIR+"reviews_Grocery_and_Gourmet_Food.json")
+reviews = spark.read.json(DATA_DIR+"reviews_Patio_Lawn_and_Garden.json")
 
 #Save into parquet to save time in the next times
-reviews.write.mode('overwrite').parquet("reviews_Grocery_and_Gourmet_Food.parquet")
+reviews.write.mode('overwrite').parquet("reviews_PatioLawnGarden.parquet")
 
 # Read from the parquet data
-#reviews = spark.read.parquet("reviews_Grocery_and_Gourmet_Food.parquet")
+#reviews = spark.read.parquet("reviews_PatioLawnGarden.parquet")
 
 
 ### Join Reviews and Metadata
 review_product_join = DF_filter_products_bio.join(reviews, ['asin'])
 
-review_product_join.write.mode('overwrite').parquet("Grocery_and_Gourmet_Food.parquet")
+review_product_join.write.mode('overwrite').parquet("PatioLawnGarden_joined.parquet")
