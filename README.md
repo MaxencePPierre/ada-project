@@ -1,6 +1,6 @@
-# How is evolving the interest about ecology through Amazon ?
+# How is the interest in eco-friendly products evolving within Amazon?
 
-# Abstract
+## Abstract
 
 The dataset we have choosen is the Amazon reviews which contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014. This year’s theme is “data science for social good”, we though about how we could improve society through data analysis.
 
@@ -11,7 +11,7 @@ We would like then to use our Machine Learning knowledge to use the extracted da
 Actually, aside Ada course, our group is following another course Data Visualization in which our project is to do some data visualization about different climates changes scenario over the year 2050. The data is provided by Stanford University and what we would like to do is to compare Amazon and Standford data over two differents project but focused on the same topic.
 
 
-# Research questions
+## Research questions
 - How the interest and concern in the climate change evolved over the years ?
 - How Amazon proposals evolved on this theme ? Did they follow the trend on this subject
 - What are people's favorite support ? (e-book, book, reports, ..)
@@ -26,7 +26,7 @@ Actually, aside Ada course, our group is following another course Data Visualiza
 - How could evolve the Nb of reviews (users interest) ? (Prediction)
 - How could evolve the Nb of products concerned ? (Prediction)
 
-# Dataset
+## Dataset
 List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
 
 The total amount of data represents 142.8 million reviews spanning from May 1996 to July 2014. It is in total around 20Gb. This dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
@@ -46,7 +46,7 @@ Regarding the size of the data and the subsete, the question we have to answer i
 
 For our side, the dataset is stored on the EPFL cluster.
 
-# A list of internal milestones up until project milestone 2
+## A list of internal milestones up until project milestone 2
 
 Milestone 2 : 25th November
 
@@ -76,7 +76,7 @@ Different cases of data following the categories of products. Each will have a d
 Then the dataset will be well processed and ready for the Milestone 3.
 Indeed, once the data is well gathered and cleaned, we will then be able to work on it using Machine Learning models to do some prediction and to do visualization on it. With the splitted data we will then compare the different categories.
 
-# Questions for TAa
+## Questions for TAa
 Add here some questions you have for us, in general or project-specific.
 
 If our theme enough big to work with ? Is it not to contraint ?
@@ -86,3 +86,79 @@ Do you think we should use spark ? During the project presentation the professor
 The dataset website explain that there is a 20Gb dataset and an other 18Gb removing the duplicates. Which one is in the cluster and can we use the cleaned one ?
 What could be the direction to extract the data in the cluster ?
 Is the Metadata dataset also available on the cluster ? (about prices, sale ranking of products)
+
+<br>
+
+---
+### Data collection and preprocessing
+
+<br>
+
+To simplify what is presented in the notebook, we have decided to perform all these steps for each category in **separate pyton scripts**.
+
+<br>
+
+For each category, we will proceed as follows:
+- Import the meta data and reviews that have been downloaded as `json` files
+- Extract the relevant and writtable features of meta data
+- Save it as a parquet file of the form **`\"category\"_datacleaned`**
+- We then do the same with the reviews and save a parquet file of the form **`"category\"_reviews`**
+- Next, we **filter the data we have to only keep articles related to ecology/bio/renewable etc...**
+- Finally, we join the metadata and review dataset using the product ID, and create a finale parquet file of the form **`\"category\"_review_product_join`**
+
+<br>
+
+Therefore, all you need to do now is execute all the scripts to automatically generate all the parquet files that will be used in tis notebook.
+
+>Note that once these files have been created, we can skip this part to gain a lot of time.
+
+<br>
+
+---
+### Understanding the data
+
+In our work, we started by first analyzing each product category available very widely to evaluate the data in each category and to determine which ones will be the most valuable for our goal.
+
+We quickly realized that many categories had no real interest in revealing the importance of environmentally friendly products.
+
+At that point, we decided to study the following categories:
+- Grocery and Gourmet Food
+- Healthcare
+- Patio Lawn and Garden
+- Books
+
+For each of these parts, we then extracted all the eco-friendly items. This data was then totally in line with what we were looking for and really allowed us to retrieve interesting information on the interest shown in these products, and above all an evolution over time.
+
+In fact, one part that was key to successfully revealing what we were looking for was in filtering our data. Indeed, if the filtering was not strict enough, we would get too many items, many of which did not correspond to what we were looking for. 
+We also realized that the number of eco-friendly items is not very large in some categories, and that if we want to carry out a consistent study and therefore a strict filter, we are forced not to treat certain categories where the number of items would be way too small to have a good analysis.
+
+
+<br>
+
+---
+### Data analysis
+
+<br>
+
+Once the parquet files are generated, we can use thhem to carry out different analyses, and each time apply it to all the categories studied to compare them with each other.
+
+<br>
+
+**1)** First, we will compute and visualize **the proportion of environmentally friendly products in each category**. This will allow us to quickly realize the importance of these products in a category. 
+
+This analysis is also important because we have large differences in quantities between the different categories, which could influence the procaine analyses.
+
+<br>
+
+**2)** Then, we will extract the publication dates of each article in each category to **plot the evolution of the number of eco-friendly products**. With these curves, we will then really be able to observe the evolution of the green trend over time.
+
+Of course, we can a priori suspect that we will obtain increasing curves, but it is interesting to evaluate this growth and compare it from one product category to another.
+
+<br>
+
+**3)** Another analysis that we will carry out focuses on the comments left on each of the products. We will indeed track **the distribution of the number of comments by product**. In this way, we can assess people's interest in environmentally friendly products and compare this interest across categories.
+
+<br>
+
+
+**4)** Then, we will look at the **average prices of the products in a category, and their evolution over time**. In this way, we will be able to observe the price difference between eco-friendly and other products, and to observe the evolution of this difference over time.
