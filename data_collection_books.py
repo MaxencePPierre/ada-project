@@ -56,7 +56,7 @@ datacleaned_DF = spark.createDataFrame(data_cleaned, schema=schema)
 datacleaned_DF.write.mode('overwrite').parquet("meta_Books.parquet")
 
 # Read from the parquet data
-#datacleaned_DF = spark.read.parquet("meta_HealthPersonalCare.parquet")
+#datacleaned_DF = spark.read.parquet("meta_Books.parquet")
 
 
 keywords = [" global warming", " solar energy", " recycling ", " pollution ", "solar power", " endangered species", "air pollution", \
