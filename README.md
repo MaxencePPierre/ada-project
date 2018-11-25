@@ -11,13 +11,17 @@ We would like then to use our Machine Learning knowledge to use the extracted da
 Actually, aside Ada course, our group is following another course Data Visualization in which our project is to do some data visualization about different climates changes scenario over the year 2050. The data is provided by Stanford University and what we would like to do is to compare Amazon and Standford data over two differents project but focused on the same topic.
 
 
+The main code is : __project_general.pynb__
+It is using some python files, that we implemented and created using the different notebooks associated with the categories. 
+Indeed we specified the analysis on some particular categories, and we finally merged it. 
+
+
 ## Research questions
 - How the interest and concern in the climate change evolved over the years ?
 - How Amazon proposals evolved on this theme ? Did they follow the trend on this subject
 - What are people's favorite support ? (e-book, book, reports, ..)
 - Who are the main and different different publishers ? Indeed information sources are very important in this domain
 - Is the climate change theme linked with some others (dependent, correlated , ..) ?
-- What did people also buy ?
 - What are the most growing sectors focusing on Ecology ?
 - Which categories to focus on ?
 - How to best visualize  the relevant information ?
@@ -76,20 +80,7 @@ Different cases of data following the categories of products. Each will have a d
 Then the dataset will be well processed and ready for the Milestone 3.
 Indeed, once the data is well gathered and cleaned, we will then be able to work on it using Machine Learning models to do some prediction and to do visualization on it. With the splitted data we will then compare the different categories.
 
-## Questions for TAa
-Add here some questions you have for us, in general or project-specific.
 
-If our theme enough big to work with ? Is it not to contraint ?
-We also though about another theme : Robotic and IA. If climate change is not enought, we can compare the evolution of those two themes.
-The data is stored on the cluster, but is it possible to extract the relevant information concerning our subject and then work on it or to work entirely on the cluster ?
-Do you think we should use spark ? During the project presentation the professor explained that the Amazon dataset was on the limit for the usability of spark (20Gb).
-The dataset website explain that there is a 20Gb dataset and an other 18Gb removing the duplicates. Which one is in the cluster and can we use the cleaned one ?
-What could be the direction to extract the data in the cluster ?
-Is the Metadata dataset also available on the cluster ? (about prices, sale ranking of products)
-
-<br>
-
----
 ### Data collection and preprocessing
 
 <br>
@@ -162,3 +153,12 @@ Of course, we can a priori suspect that we will obtain increasing curves, but it
 
 
 **4)** Then, we will look at the **average prices of the products in a category, and their evolution over time**. In this way, we will be able to observe the price difference between eco-friendly and other products, and to observe the evolution of this difference over time.
+
+
+### Next steps : 
+
+We confirm that the data is well suited for our project, as we are looking for eco-friendly products. 
+We succeed to manage large amount of data (some GB per category, and especially 18GB only for the books reviews)
+
+We will for the milestone 3 work on a data story about our case. Indeed we will show properly the trends in the Amazon products for each category about the ecofriendly products. This will to some quantitative and qualitative analysis results. We can already see for example, that the eco-friendly products mostly appeared in 2002/2003 compared to the other products, and the number is growing.
+We describe the different steps that we would like to fulfill, in the project_general notebook, in the TO-do list.
