@@ -157,5 +157,8 @@ Of course, we can a priori suspect that we will obtain increasing curves, but it
 
 ### Next steps : 
 
+We confirm that the data is well suited for our project, as we are looking for eco-friendly products. 
+We succeed to manage large amount of data (some GB per category, and especially 18GB only for the books reviews)
+
 We will for the milestone 3 work on a data story about our case. Indeed we will show properly the trends in the Amazon products for each category about the ecofriendly products. This will to some quantitative and qualitative analysis results. We can already see for example, that the eco-friendly products mostly appeared in 2002/2003 compared to the other products, and the number is growing.
 We describe the different steps that we would like to fulfill, in the project_general notebook, in the TO-do list.
