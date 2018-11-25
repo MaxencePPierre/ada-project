@@ -11,7 +11,7 @@ We would like then to use our Machine Learning knowledge to use the extracted da
 Actually, aside Ada course, our group is following another course Data Visualization in which our project is to do some data visualization about different climates changes scenario over the year 2050. The data is provided by Stanford University and what we would like to do is to compare Amazon and Standford data over two differents project but focused on the same topic.
 
 
-The main code is : project_general.pynb
+The main code is : __project_general.pynb__
 It is using some python files, that we implemented and created using the different notebooks associated with the categories. 
 Indeed we specified the analysis on some particular categories, and we finally merged it. 
 
@@ -157,5 +157,5 @@ Of course, we can a priori suspect that we will obtain increasing curves, but it
 
 ### Next steps : 
 
-We will for the milestone 3 work on a data story about our case. Indeed we will show properly the trends in the Amazon products for each category about the ecofriendly products. This will to some quantitative and qualitative analysis results. We can already see, that the eco-friendly products mostly appeared in 2002/2003 compared to the other products, and the number is more growing.
+We will for the milestone 3 work on a data story about our case. Indeed we will show properly the trends in the Amazon products for each category about the ecofriendly products. This will to some quantitative and qualitative analysis results. We can already see for example, that the eco-friendly products mostly appeared in 2002/2003 compared to the other products, and the number is growing.
 We describe the different steps that we would like to fulfill, in the project_general notebook, in the TO-do list.
