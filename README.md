@@ -23,7 +23,6 @@ Indeed we specified the analysis on some particular categories, and we finally m
 - Who are the main and different different publishers ? Indeed information sources are very important in this domain
 - Is the climate change theme linked with some others (dependent, correlated , ..) ?
 - What are the most growing sectors focusing on Ecology ?
-- Which categories to focus on ?
 - How to best visualize  the relevant information ?
 - How is evolving the price of these products ? (The bio was for example known to be expensive).
 - How could evolve the Sale Ranking of this kind of products ? (Prediction)
