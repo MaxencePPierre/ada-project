@@ -80,14 +80,30 @@ DF_filter_products_bio = spark.createDataFrame(filter_products_bio)
 
 reviews = spark.read.json(DATA_DIR+"reviews_Home_and_Kitchen.json")
 
+#We remove the review text, reviewer name and summary
+reviews_cleaned = reviews.rdd.flatMap(lambda r: [(r[0], r[1], r[2], r[4], r[5],r[8])])
+
+# Define the StructType to define the DataFrame that we'll create with the previously extracted rdd table
+schema = StructType([
+    StructField("asin", StringType(), True),
+    StructField("helpful", ArrayType(IntegerType()), True),
+    StructField("overall", FloatType(), True),
+    StructField("reviewTime", StringType(), True),
+    StructField("reviewerID", StringType(), True),
+    StructField("unixReviewTime", StringType(), True),
+])
+
+# Transform the RDD data into DataFrame (we'll then be able to store it in Parquet)
+reviews_cleaned_DF = spark.createDataFrame(reviews_cleaned, schema=schema)
+
 #Save into parquet to save time in the next times
-reviews.write.mode('overwrite').parquet("reviews_Home_and_Kitchen.parquet")
+reviews_cleaned_DF.write.mode('overwrite').parquet("reviews_Home_and_Kitchen.parquet")
 
 # Read from the parquet data
 #reviews = spark.read.parquet("reviews_HealthPersonalCare.parquet")
 
 
 ### Join Reviews and Metadata
-review_product_join = DF_filter_products_bio.join(reviews, ['asin'])
+review_product_join = DF_filter_products_bio.join(reviews_cleaned_DF, ['asin'])
 
 review_product_join.write.mode('overwrite').parquet("Home_and_Kitchen_joined.parquet")
