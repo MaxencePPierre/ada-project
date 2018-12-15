@@ -36,7 +36,9 @@ meta_products = spark.read.json(DATA_DIR+"meta_Books.json")
 # This will extract only the features and turn them into more readable features.
 # Filter salesRank = None because this will lead to problems for the writing in parquet
 # Features removed : corruptRecord, imURL, related
-data_cleaned = meta_products.rdd.flatMap(lambda r: [(r[1], r[2], 'Books', r[4], r[6],  r[9] )])
+#data_cleaned = meta_products.rdd.flatMap(lambda r: [(r[1], r[2], 'Books', r[4], r[6],  r[9] )])
+data_cleaned = meta_products.rdd.filter(lambda r: (r[8] != None ) )  \
+                    .flatMap(lambda r: [(r[1], r[2], r[3][0][0], r[4], r[6],r[8]['Books'],  r[9] )]) \
 
 # Define the StructType to define the DataFrame that we'll create with the previously extracted rdd table
 schema = StructType([
@@ -45,7 +47,7 @@ schema = StructType([
     StructField("category", StringType(), True),
     StructField("description", StringType(), True),
     StructField("price", FloatType(), True),
-    #StructField("salesRank", IntegerType(), True),
+    StructField("salesRank", IntegerType(), True),
     StructField("title", StringType(), True)
 ])
 
@@ -67,11 +69,11 @@ keywords = [" global warming", " solar energy", " recycling ", " pollution ", "s
 # Filter with title and description not equal to None
 # We will then be able to test if those features contains words defined in the keyword vector
 # The keyword vector represents the thema that we want : ecology, bio etc...
-filter_products_bio = datacleaned_DF.rdd.filter(lambda r: (r[5] != None) &  (r[3] != None)) \
-                    .filter(lambda r: (any(word in r[5].lower() for word in keywords)) | (any(word in r[3].lower() for word in keywords)) ) 
+filter_products_bio = datacleaned_DF.rdd.filter(lambda r: (r[6] != None) &  (r[3] != None)) \
+                    .filter(lambda r: (any(word in r[6].lower() for word in keywords)) | (any(word in r[3].lower() for word in keywords)) ) 
 
 # Transform the RDD data into DataFrame (we'll then be able work and join with review data)
-DF_filter_products_bio = spark.createDataFrame(filter_products_bio)
+DF_filter_products_bio = spark.createDataFrame(filter_products_bio, samplingRatio=0.2)
 
 
 ### IMPORTING & CLEANING REVIEWS DATA
