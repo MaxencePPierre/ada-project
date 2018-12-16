@@ -163,6 +163,8 @@ We describe the different steps that we would like to fulfill, in the project_ge
 
 ### Milestone 3 Update :
 Kevin : Preliminary data analysis, coming up with the algorithm, coding up the algorithm, running tests, writing up the report, will work on the final presentation
+
 Eliott : Problem formulation, coding up the algorithm, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
+
 Maxence : Coding up the algorithm, running tests, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
 
