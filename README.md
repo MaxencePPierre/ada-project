@@ -17,17 +17,16 @@ Indeed we specified the analysis on some particular categories, and we finally m
 
 
 ## Research questions
-- How the interest and concern in the climate change evolved over the years ?
+- How the interest and concern in the ecological environment evolved over the years ?
 - How Amazon proposals evolved on this theme ? Did they follow the trend on this subject
-- What are people's favorite support ? (e-book, book, reports, ..)
-- Who are the main and different different publishers ? Indeed information sources are very important in this domain
-- Is the climate change theme linked with some others (dependent, correlated , ..) ?
+- What are the most concerned categories about environment ? (Garden, Books, Grocery etc...)
+- Who are the main and different  brands ? 
 - What are the most growing sectors focusing on Ecology ?
-- How to best visualize  the relevant information ?
-- How is evolving the price of these products ? (The bio was for example known to be expensive).
-- How could evolve the Sale Ranking of this kind of products ? (Prediction)
-- How could evolve the Nb of reviews (users interest) ? (Prediction)
-- How could evolve the Nb of products concerned ? (Prediction)
+- How is evolving the price of these products ? (The bio is for example known to be expensive).
+- How could evolve the Sale Ranking of this kind of products ? 
+- How could evolve the Nb of reviews from ecofriendly products ? 
+- How could evolve the Nb of ecofriedndly products  ?
+- How are the ratings of ecofriendly products compared to the general ones ? 
 
 ## Dataset
 List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
