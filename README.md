@@ -129,7 +129,7 @@ We also realized that the number of eco-friendly items is not very large in some
 
 <br>
 
-Once the parquet files are generated, we can use thhem to carry out different analyses, and each time apply it to all the categories studied to compare them with each other.
+Once the parquet files are generated, we can use them to carry out different analyses, and each time apply it to all the categories studied to compare them with each other.
 
 <br>
 
@@ -160,3 +160,9 @@ We succeed to manage large amount of data (some GB per category, and especially 
 
 We will for the milestone 3 work on a data story about our case. Indeed we will show properly the trends in the Amazon products for each category about the ecofriendly products. This will to some quantitative and qualitative analysis results. We can already see for example, that the eco-friendly products mostly appeared in 2002/2003 compared to the other products, and the number is growing.
 We describe the different steps that we would like to fulfill, in the project_general notebook, in the TO-do list.
+
+### Milestone 3 Update :
+Kevin : Preliminary data analysis, coming up with the algorithm, coding up the algorithm, running tests, writing up the report, will work on the final presentation
+Eliott : Problem formulation, coding up the algorithm, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
+Maxence : Coding up the algorithm, running tests, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
+
