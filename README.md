@@ -162,9 +162,9 @@ We will for the milestone 3 work on a data story about our case. Indeed we will 
 We describe the different steps that we would like to fulfill, in the project_general notebook, in the TO-do list.
 
 ### Milestone 3 Update :
-Kevin : Preliminary data analysis, coming up with the algorithm, coding up the algorithm, running tests, writing up the report, will work on the final presentation
+Kevin : Preliminary data analysis, problem formulation, coming up with the algorithm, running tests, writing up the report, will work on the final presentation
 
-Eliott : Problem formulation, coding up the algorithm, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
+Eliott : Problem formulation, coding up the algorithm, writing up the report, running tests, will work on the final presentation
 
-Maxence : Coding up the algorithm, running tests, writing up the report, coming up with the algorithm, running tests, will work on the final presentation
+Maxence : Problem formulation, coding up the algorithm, running tests, writing up the report, will work on the final presentation
 
